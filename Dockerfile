@@ -7,6 +7,9 @@ WORKDIR /app
 # Copy all files (source code) into container
 COPY . .
 
+# Give execution permission to mvnw script
+RUN chmod +x mvnw
+
 # Build the project with Maven Wrapper (skip tests to save time)
 RUN ./mvnw package -DskipTests
 
